@@ -9,7 +9,7 @@ export const getAllUser = async (req, res, next) => {
     console.log(err);
   }
   if (!users) {
-    return res.status(404).json({ message: "no user found" });
+    return res.status(200).json({ message: "no user found" });
   }
   return res.status(200).json({ users });
 };
@@ -39,7 +39,7 @@ export const signup = async (req, res, next) => {
   } catch (err) {
     return console.log(err);
   }
-  return res.status(201).json({ message: "Register succesfully do login" });
+  return res.status(200).json({ message: "Register succesfully do login" });
 };
 
 export const login = async (req, res, next) => {
@@ -52,12 +52,12 @@ export const login = async (req, res, next) => {
     return console.log(err);
   }
   if (!existingUser) {
-    return res.status(404).json({ message: "couldnt find ID! do signup" });
+    return res.status(200).json({ message: "couldnt find ID! do signup" });
   }
 
   const isPasswordCorrect = bcrypt.compareSync(password, existingUser.password);
   if (!isPasswordCorrect) {
-    return res.status(400).json({ message: "Incotrrect password" });
+    return res.status(200).json({ message: "Incotrrect password" });
   }
   return res.status(200).json({ existingUser });
 };
