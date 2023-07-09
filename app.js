@@ -13,6 +13,6 @@ mongoose
   .connect(
     "mongodb+srv://navneetprajapati26:IdzkctGUrgpjI4zH@cluster0.tzqg2lg.mongodb.net/Blog?retryWrites=true&w=majority"
   )
-  .then(() => app.listen(5000))
+  .then(() => app.listen(process.env.PORT || 5000))
   .then(() => console.log("connected and on 5000"))
   .catch((err) => console.log(err));
