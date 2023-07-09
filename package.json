@@ -2,7 +2,7 @@
   "name": "social_app",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "type": "module",
   "scripts": {
     "start": "nodemon --experimental-modules --es-module-specifier-resolution=node app.js",
