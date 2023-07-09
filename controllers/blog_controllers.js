@@ -11,7 +11,9 @@ export const getAllBlogs = async (req, res, next) => {
   }
 
   if (!blogs) {
-    return res.status(404).json({ message: "no blogs Found" });
+    return res.status(404).json({
+      message: "no blogs Found",
+    });
   }
   return res.status(200).json({ blogs });
 };
